@@ -1,5 +1,4 @@
-package com.example.testapp//поменять потом.возможно надо сделать класс а не файл
-
+package com.example.englishwordsapp
 
 data class Word(
     val original: String,
@@ -15,7 +14,14 @@ class LearnWordsTrainer {
     private val dictionary = listOf(
         Word("Vogon","Вогон"),
         Word("Babel fish","Бабел-рыба"),
-        Word("Towel","Полотенце")
+        Word("Towel","Полотенце"),
+        Word("Cat","Кошка"),
+        Word("Dog","Собака"),
+        Word("Cow","Корова"),
+        Word("Ear","Ухо"),
+        Word("Chair","Стул"),
+        Word("Desk","Стол"),
+
     )
     private var currentQuestion: Question? = null
 
@@ -34,7 +40,7 @@ class LearnWordsTrainer {
                 notLearnedList.shuffled().take(NUMBER_OF_ANSWERS)
             }.shuffled()
 
-        val correctAnswer  =questionWords.random()
+        val correctAnswer = questionWords.random()
 
         currentQuestion = Question(
             variants = questionWords,
@@ -58,4 +64,3 @@ class LearnWordsTrainer {
 }
 
 const val NUMBER_OF_ANSWERS = 4
-

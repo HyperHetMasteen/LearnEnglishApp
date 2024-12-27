@@ -20,7 +20,7 @@ class LearnWordsTrainer {
         Word("Cow","Корова"),
         Word("Ear","Ухо"),
         Word("Chair","Стул"),
-        Word("Desk","Стол"),
+//        Word("Desk","Стол"),
 
     )
     private var currentQuestion: Question? = null
@@ -34,7 +34,7 @@ class LearnWordsTrainer {
             if(notLearnedList.size< NUMBER_OF_ANSWERS) {
                 val learnedList = dictionary.filter { it.learned }.shuffled()
                 notLearnedList.shuffled()
-                    .take(NUMBER_OF_ANSWERS) + learnedList
+                    //.take(NUMBER_OF_ANSWERS) + learnedList   из за этой строки идут повторы слов
                     .take(NUMBER_OF_ANSWERS - notLearnedList.size)
             }else {
                 notLearnedList.shuffled().take(NUMBER_OF_ANSWERS)

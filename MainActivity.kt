@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             if(firstQuestion==null||firstQuestion.variants.size< NUMBER_OF_ANSWERS){
                 tvQuestionWord.isVisible = false
                 layoutVariants.isVisible = false
+                btnSkip.isVisible = true
                 btnSkip.text = "Complete!"
             } else {
                 btnSkip.isVisible = true
